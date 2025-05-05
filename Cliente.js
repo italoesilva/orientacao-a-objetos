@@ -1,5 +1,14 @@
-export class Cliente{
+export class Cliente {
     nome;
-    cpf;
-  
- }
+    _cpf;
+
+    get cpf() {
+        return this._cpf;
+    }
+
+    constructor(agencia, cliente){
+        this.cliente = cliente;
+        this.agencia = agencia;
+    }
+
+}

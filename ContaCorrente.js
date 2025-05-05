@@ -1,37 +1,17 @@
+import { Cliente } from "./Cliente.js";
 
-export class ContaCorrente{
+export class ContaCorrente {
+    static numeroDeContas = 0;
     agencia;
-    cliente;
+    _cliente;
 
+    _saldo = 0;
 
-    _saldo = 0;;
-    
+//...código omitido
 
-    sacar(valor){
-        
-        if(this._saldo >= valor){
-           this._saldo -= valor;
-           return valor;
-        }
-        
+    constructor(agencia, cliente) {
+        this.cliente = cliente;
+        this.agencia = agencia;
+        ContaCorrente.numeroDeContas += 1
     }
-
-    depositar(valor){
-        if(valor <= 0){
-            return;
-        }
-
-            this._saldo += valor;
-          
-    }
-
-    transferir(valor, conta){
-     
-        const valorSacado = this.sacar(valor);
-        conta.depositar(valorSacado);
-        conta.cidade = "São Paulo";
-        valor = 20;
-
-
-    }
-}
+//...
